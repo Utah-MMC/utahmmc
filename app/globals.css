@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Poppins', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Section Heading Styles */
+.section-heading {
+  @apply font-bold text-center relative pb-2 uppercase;
+}
+
+.section-heading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: 5px;
+  background-color: currentColor;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply inline-block px-9 py-2 bg-transparent border-2 border-white text-white uppercase transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-white text-black;
+}
+
+.btn-secondary {
+  @apply inline-block px-9 py-2 bg-transparent border-2 border-black text-black uppercase transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply bg-black text-white;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Layout Padding Utilities */
+.layout_padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 768px) {
+  .layout_padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+/* Hero Area */
+.hero_area {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slider Section */
+.slider_section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Nav Link Hover Effect */
+.nav-link {
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #4f46e5;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
