@@ -14,7 +14,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length)
-    }, 5000) // Change slide every 5 seconds
+    }, 6500) // Change slide every 6.5 seconds
 
     return () => clearInterval(interval)
   }, [])
@@ -33,10 +33,9 @@ export default function HeroCarousel() {
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${image})`,
+            backgroundImage: `linear-gradient(115deg, rgba(23, 23, 20, 0.78), rgba(67, 51, 39, 0.55)), url(${image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
             backgroundRepeat: 'no-repeat',
           }}
         />
@@ -50,8 +49,8 @@ export default function HeroCarousel() {
             onClick={() => goToSlide(index)}
             className={`h-3 rounded-full transition-all ${
               index === currentIndex
-                ? 'bg-white w-8'
-                : 'bg-white/50 hover:bg-white/75 w-3'
+                ? 'bg-[#cbb18c] w-8'
+                : 'bg-white/50 hover:bg-white/80 w-3'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

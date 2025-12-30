@@ -3,14 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #f7f3ec;
+  --foreground: #1b1a17;
+  --surface: #ffffff;
+  --muted: #5b544e;
+  --accent: #b65f36;
+  --accent-dark: #8f4729;
+  --accent-ink: #2f3f4a;
+  --line: #e6ddd0;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body), 'Manrope', 'Segoe UI', sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), 'Fraunces', 'Times New Roman', serif;
 }
 
 @layer utilities {
@@ -21,35 +31,47 @@ body {
 
 /* Section Heading Styles */
 .section-heading {
-  @apply font-bold text-center relative pb-2 uppercase;
-}
-
-.section-heading::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 55px;
-  height: 5px;
-  background-color: currentColor;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
 
 /* Button Styles */
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2.2rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
 .btn-primary {
-  @apply inline-block px-9 py-2 bg-transparent border-2 border-white text-white uppercase transition-all duration-300;
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 12px 28px rgba(182, 95, 54, 0.28);
 }
 
 .btn-primary:hover {
-  @apply bg-white text-black;
+  background: var(--accent-dark);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
-  @apply inline-block px-9 py-2 bg-transparent border-2 border-black text-black uppercase transition-all duration-300;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
 .btn-secondary:hover {
-  @apply bg-black text-white;
+  background: var(--accent);
+  color: #ffffff;
 }
 
 /* Smooth Scrolling */
@@ -70,21 +92,6 @@ html {
   }
 }
 
-/* Hero Area */
-.hero_area {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Slider Section */
-.slider_section {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-}
-
 /* Nav Link Hover Effect */
 .nav-link {
   position: relative;
@@ -98,11 +105,52 @@ html {
   bottom: 0;
   width: 0;
   height: 3px;
-  background-color: #4f46e5;
+  background-color: var(--accent);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.float-slow {
+  animation: floatSoft 9s ease-in-out infinite;
+}
+
+.float-slower {
+  animation: floatSoft 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .float-slow,
+  .float-slower {
+    animation: none;
+  }
 }
 

@@ -6,63 +6,80 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="header_section fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
-      <div className="container-fluid px-6 lg:px-8">
+    <header className="header_section fixed top-0 left-0 w-full z-50 bg-[#f7f3ec]/92 backdrop-blur-xl border-b border-[#e6ddd0]">
+      <div className="container mx-auto px-6 lg:px-8">
         <nav className="flex items-center justify-between py-4">
-          <a href="/" className="navbar-brand flex items-center">
+          <a href="/" className="navbar-brand flex items-center gap-3">
             <img 
               src="/logo.png" 
               alt="Utah MMC Logo" 
-              className="h-16 md:h-20 w-auto"
+              className="h-12 md:h-14 w-auto scale-150 origin-left drop-shadow-[0_8px_22px_rgba(15,13,11,0.22)]"
             />
+            <span className="hidden sm:inline text-xs tracking-[0.28em] text-[#7a604b] font-semibold uppercase">
+              Utah MMC
+            </span>
           </a>
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 text-sm">
             <a
               href="#home"
-              className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+              className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a
               href="#overview"
-              className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+              className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
               onClick={() => setIsMenuOpen(false)}
             >
               Overview
             </a>
             <a
-              href="#partners"
-              className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+              href="#services"
+              className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
               onClick={() => setIsMenuOpen(false)}
             >
-              Portfolio Companies
+              Services
             </a>
             <a
-              href="#select-company"
-              className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+              href="#partnerships"
+              className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
               onClick={() => setIsMenuOpen(false)}
             >
-              Select Company
+              Partnerships
+            </a>
+            <a
+              href="#companies"
+              className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Companies
             </a>
             <a
               href="#portfolio"
-              className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+              className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
               onClick={() => setIsMenuOpen(false)}
             >
-              Portfolio
+              Highlights
+            </a>
+            <a
+              href="#contact"
+              className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
             </a>
             <a
               href="/login"
-              className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 transition-colors"
+              className="px-4 py-2 rounded-full border border-[#b65f36] text-[#b65f36] text-xs font-semibold uppercase tracking-[0.25em] hover:bg-[#b65f36] hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Login
+              Partner Portal
             </a>
           </div>
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-800 focus:outline-none"
+            className="lg:hidden text-[#2f3f4a] focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -85,49 +102,63 @@ export default function Header() {
         </nav>
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden mt-4 pb-6">
+            <div className="flex flex-col space-y-4 text-sm">
               <a
                 href="#home"
-                className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+                className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href="#overview"
-                className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+                className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Overview
               </a>
               <a
-                href="#partners"
-                className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+                href="#services"
+                className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Portfolio Companies
+                Services
               </a>
               <a
-                href="#select-company"
-                className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+                href="#partnerships"
+                className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Select Company
+                Partnerships
+              </a>
+              <a
+                href="#companies"
+                className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Companies
               </a>
               <a
                 href="#portfolio"
-                className="nav-link text-gray-800 uppercase text-sm font-medium transition-all"
+                className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Portfolio
+                Highlights
+              </a>
+              <a
+                href="#contact"
+                className="nav-link text-[#1b1a17] uppercase tracking-[0.18em] text-sm font-semibold transition-all hover:text-[#b65f36]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
               </a>
               <a
                 href="/login"
-                className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 transition-colors text-center"
+                className="px-4 py-2 rounded-full border border-[#b65f36] text-[#b65f36] text-xs font-semibold uppercase tracking-[0.25em] hover:bg-[#b65f36] hover:text-white transition-colors text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Login
+                Partner Portal
               </a>
             </div>
           </div>
